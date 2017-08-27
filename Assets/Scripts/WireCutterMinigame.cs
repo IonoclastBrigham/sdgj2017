@@ -68,6 +68,7 @@ public class WireCutterMinigame : MonoBehaviour {
         } else
         {
             _succeeded = true;
+            _globalState.CompletedWireMinigame = true;
         }
 
         if (_globalState.FirstSelectedWireIndex < 0)
@@ -102,5 +103,13 @@ public class WireCutterMinigame : MonoBehaviour {
             PlaySuccess();
         else
             PlayFailure();
+
+        StartCoroutine(WaitAndContinueToNextGame(2.0f));
+    }
+
+    IEnumerator WaitAndContinueToNextGame( float delay )
+    {
+        yield return new WaitForSeconds(delay);
+        _globalState.GoToNextMinigame();
     }
 }

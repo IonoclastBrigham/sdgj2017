@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657856, g: 0.49641234, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -722,48 +722,6 @@ Transform:
   m_Father: {fileID: 1083231799}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &469830666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 469830668}
-  - component: {fileID: 469830667}
-  m_Layer: 0
-  m_Name: GlobalState
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &469830667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469830666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081dacea4e337014b82a718120a4e77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirstSelectedWireIndex: -1
-  CorrectWire: 1
---- !u!4 &469830668
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469830666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &481549230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1075,7 @@ MonoBehaviour:
   Audio: {fileID: 695014466}
   Explosion_Nuke: {fileID: 8300000, guid: 04cfd2a10b00259409e38b0b72c6ef21, type: 3}
   Explosion_Dud: {fileID: 8300000, guid: a2c6f3238cb59794e870847b840c4ca7, type: 3}
+  MissileParticles: {fileID: 0}
   Uncut: {fileID: 21300000, guid: 7ded33798d290334c9eae447ac85276e, type: 3}
   Cut: {fileID: 21300000, guid: 10157f2be71f2ac4385420d5bc1bf0bc, type: 3}
   Wires:
@@ -5826,7 +5785,7 @@ Transform:
   m_LocalScale: {x: 314.23788, y: 68.90252, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1861178839
 GameObject:

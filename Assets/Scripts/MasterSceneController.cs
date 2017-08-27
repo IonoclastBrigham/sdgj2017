@@ -19,4 +19,19 @@ public class MasterSceneController : MonoBehaviour {
 
         SceneManager.LoadScene(index);
     }
+
+    public void StartWireScenario()
+    {
+        SceneManager.LoadScene("Scenes/BombDiffusal");
+    }
+
+    public void StartCarScenario()
+    {
+        SceneManager.LoadScene("Scenes/CarMinigame");
+    }
+
+    public void StartEnding()
+    {
+        SceneManager.LoadScene("Scenes/Ending");
+    }
 }

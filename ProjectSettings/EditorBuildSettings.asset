@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BombDiffusal.unity
     guid: fa5d44bfd6ad4c6459b5f29a5dd09cb9
+  - enabled: 1
+    path: Assets/Scenes/CarMinigame.unity
+    guid: f2cfefa28ca20394784cd4c2a7f6a6c2
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: fff4de4ebad6e1d46908f8eaba961863

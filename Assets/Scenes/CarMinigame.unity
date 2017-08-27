@@ -141,6 +141,11 @@ MonoBehaviour:
   xMinConstraint: -8
   xMaxConstraint: 8
   steerSpeed: 3
+  Lanes:
+  - {fileID: 515084945}
+  - {fileID: 1481505828}
+  - {fileID: 935418633}
+  - {fileID: 2056866132}
   ScreenShaker: {fileID: 358463314}
   Audio: {fileID: 64327253}
   CarSmash: {fileID: 8300000, guid: 0025c306264ce034ba4c83a5c1dec21d, type: 3}
@@ -460,7 +465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515084945}
   m_Layer: 0
-  m_Name: Lane
+  m_Name: Lane 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935418633}
   m_Layer: 0
-  m_Name: Lane
+  m_Name: Lane 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1481505828}
   m_Layer: 0
-  m_Name: Lane
+  m_Name: Lane 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,6 +756,7 @@ GameObject:
   - component: {fileID: 1516819114}
   - component: {fileID: 1516819113}
   - component: {fileID: 1516819115}
+  - component: {fileID: 1516819116}
   m_Layer: 0
   m_Name: Car Minigame
   m_TagString: Untagged
@@ -783,6 +789,9 @@ MonoBehaviour:
   - {fileID: 1646981259178978, guid: ab26596a331d7ee43a3e9d29e2be9f84, type: 2}
   - {fileID: 1646981259178978, guid: f463242ba59e68243b7a693d4f0cfc18, type: 2}
   - {fileID: 1646981259178978, guid: 50477af197889084e8a6d97f2b73b73b, type: 2}
+  MinSpeed: 3
+  MaxSpeed: 10
+  Duration: 15
 --- !u!4 &1516819114
 Transform:
   m_ObjectHideFlags: 0
@@ -812,6 +821,18 @@ MonoBehaviour:
     type: 2}
   preAllocNum: 5
   Speed: 30
+--- !u!114 &1516819116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1516819112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49c024f6b6593c4bb1beed40fc7bc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinigameDuration: 60
 --- !u!4 &1995068704 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4870167790249810, guid: f463242ba59e68243b7a693d4f0cfc18,
@@ -826,7 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2056866132}
   m_Layer: 0
-  m_Name: Lane
+  m_Name: Lane 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

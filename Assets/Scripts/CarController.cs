@@ -8,32 +8,57 @@ public class CarController : MonoBehaviour {
     public float xMaxConstraint = 5f;
     public float steerSpeed = 3.0f;
 
+    public Transform[] Lanes;
+
     public ScreenShaker ScreenShaker;
     public AudioSource Audio;
     public AudioClip CarSmash;
 
     public GameObject ExplosionPrefab;
 
+    private int _laneIndex = 0;
+    private float _smoothVelocity;
+    private Rigidbody _rigidbody;
+
 	// Use this for initialization
 	void Start () {
-		
+        _rigidbody = GetComponent<Rigidbody>();
+        _laneIndex = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        float x = Input.GetAxis("Horizontal");
-        Move(x, Time.fixedDeltaTime);
+        
+        if ( Input.GetKeyDown(KeyCode.LeftArrow) )
+        {
+            _laneIndex = Mathf.Max(0, _laneIndex - 1);
+        } else if ( Input.GetKeyDown( KeyCode.RightArrow))
+        {
+            _laneIndex = Mathf.Min(_laneIndex + 1, Lanes.Length - 1); 
+        }
+
+        TweenToLane();
 	}
+
+    private void TweenToLane()
+    {
+        var rbody = GetComponent<Rigidbody>();
+        var lanePos = Lanes [_laneIndex].position;
+        var x = lanePos.x;
+
+        var pos = transform.position;
+        pos.x = Mathf.SmoothDamp(pos.x, x, ref _smoothVelocity, 0.15f);
+        //transform.position = pos;
+        _rigidbody.MovePosition(pos);
+    }
 
     private void Move( float xAxis, float deltaTime )
     {
-        var rbody = GetComponent<Rigidbody>();
-
         var pos = transform.position;
         pos.x += steerSpeed * xAxis * deltaTime;
         pos.x = Mathf.Clamp(pos.x, xMinConstraint, xMaxConstraint);
        
-        rbody.MovePosition(pos);
+        _rigidbody.MovePosition(pos);
     }
 
     void OnTriggerEnter( Collider other )
