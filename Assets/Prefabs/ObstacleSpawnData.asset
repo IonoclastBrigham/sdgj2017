@@ -9,5 +9,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f7a1a0b6b72d3a42b2858ad0f72edac, type: 3}
-  m_Name: ObstacleFile
+  m_Name: ObstacleSpawnData
   m_EditorClassIdentifier: 
+  Obstacles:
+  - {fileID: 1141123297391192, guid: 74b991602324b4bbf9188633b1b32056, type: 2}
+  - {fileID: 126862, guid: f5b62e31088c8084889a36864362b47a, type: 2}
+  - {fileID: 114300, guid: cc07629db39c46d4ba8bd93ec2b09604, type: 2}
+  - {fileID: 172656, guid: 1f3da6ce4b9df5644840d36c5d90349f, type: 2}
+  - {fileID: 100000, guid: 9ccee7079c851504d862a5f855ad5d7f, type: 2}
+  - {fileID: 100000, guid: 93cef34952e76824e9212a436ec3a2b3, type: 2}
+  - {fileID: 100000, guid: ac88bfff72bd6a149bb608ce16b9daff, type: 2}
+  - {fileID: 100000, guid: 2c727257413cce34594b3d9e76156e77, type: 2}
+  Cover:
+  - {fileID: 100000, guid: 93cef34952e76824e9212a436ec3a2b3, type: 2}
+  - {fileID: 126862, guid: f5b62e31088c8084889a36864362b47a, type: 2}
+  Decorations:
+  - {fileID: 100000, guid: d7ebb2b5789a2be45b7bd26b3b9d50aa, type: 2}
+  - {fileID: 100000, guid: 23062208c1e1ace4d9e5270be8b68dcb, type: 2}
+  - {fileID: 100000, guid: 78fdf95c4c2d7384a8957ee310d2b067, type: 2}
+  - {fileID: 100000, guid: b9a280474574b1e498e52b937770b724, type: 2}

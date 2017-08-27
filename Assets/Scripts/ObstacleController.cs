@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleController : MonoBehaviour {
 
     public Transform[] Lanes;
-    public GameObject[] Prefabs;
+	public ObstacleSpawnData SpawnData;
 
     public InfRunnerMinigame Minigame;
 
@@ -68,7 +68,7 @@ public class ObstacleController : MonoBehaviour {
 
     private bool ShouldSpawnObject()
     {
-        if (Prefabs.Length == 0)
+		if (SpawnData.Obstacles.Length == 0)
             return false;
         
         return _nextSpawnDistance < 0;
@@ -76,6 +76,6 @@ public class ObstacleController : MonoBehaviour {
 
     private GameObject GetRandomObjPrefab()
     {
-        return Prefabs [Random.Range(0, Prefabs.Length)];
+		return SpawnData.Obstacles [Random.Range(0, SpawnData.Obstacles.Length)];
     }
 }
