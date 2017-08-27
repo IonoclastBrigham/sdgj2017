@@ -9,6 +9,7 @@ public class WireCutterMinigame : MonoBehaviour {
     public AudioClip Explosion_Nuke;
     public AudioClip Explosion_Dud;
 
+    public ParticleSystem MissileParticles;
 
     public Sprite Uncut;
     public Sprite Cut;
@@ -93,6 +94,10 @@ public class WireCutterMinigame : MonoBehaviour {
 
     public void TriggerEnd()
     {
+
+        if (MissileParticles)
+            MissileParticles.Stop();
+        
         if (_succeeded)
             PlaySuccess();
         else
