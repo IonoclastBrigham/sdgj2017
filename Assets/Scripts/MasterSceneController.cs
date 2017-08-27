@@ -10,8 +10,13 @@ public class MasterSceneController : MonoBehaviour {
 	
         DontDestroyOnLoad(this);
 
-        StartCoroutine( AutoLoad(1));
 	}
+
+    public void Begin()
+    {
+
+        StartCoroutine( AutoLoad(1));
+    }
 	
     public IEnumerator AutoLoad( int index )
     {
