@@ -428,6 +428,74 @@ Transform:
   m_Father: {fileID: 1083231799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 88.990005, y: 0, z: 0}
+--- !u!1 &255632366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 255632367}
+  - component: {fileID: 255632368}
+  - component: {fileID: 255632369}
+  m_Layer: 5
+  m_Name: FadePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &255632367
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255632366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 786904016}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &255632368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255632366}
+--- !u!114 &255632369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255632366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1 &357566351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,12 +1143,14 @@ MonoBehaviour:
   Audio: {fileID: 695014466}
   Explosion_Nuke: {fileID: 8300000, guid: 04cfd2a10b00259409e38b0b72c6ef21, type: 3}
   Explosion_Dud: {fileID: 8300000, guid: a2c6f3238cb59794e870847b840c4ca7, type: 3}
-  MissileParticles: {fileID: 0}
+  SnipClip: {fileID: 8300000, guid: 873a48fe10a10a449bd21a9db6add803, type: 3}
+  MissileParticles: {fileID: 1119413168}
   Uncut: {fileID: 21300000, guid: 7ded33798d290334c9eae447ac85276e, type: 3}
   Cut: {fileID: 21300000, guid: 10157f2be71f2ac4385420d5bc1bf0bc, type: 3}
   Wires:
   - {fileID: 769734016}
   - {fileID: 525387294}
+  FadePanel: {fileID: 255632369}
   WireCutter: {fileID: 2113875289}
   Positions:
   - {fileID: 1602584054}
@@ -1332,6 +1402,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1223380123}
+  - {fileID: 255632367}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1601,7 +1672,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 320553103
+  randomSeed: -372413715
   InitialModule:
     serializedVersion: 3
     enabled: 1

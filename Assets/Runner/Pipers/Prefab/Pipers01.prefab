@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 403698}
   - component: {fileID: 3343106}
   - component: {fileID: 2328714}
-  - component: {fileID: 6448248}
+  - component: {fileID: 65280172621233704}
   m_Layer: 0
   m_Name: Pipers01
   m_TagString: Untagged
@@ -70,20 +70,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126862}
   m_Mesh: {fileID: 4300000, guid: 78eefc55de725b24794e23fa05da0976, type: 3}
---- !u!64 &6448248
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126862}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 78eefc55de725b24794e23fa05da0976, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -95,3 +81,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126862}
   m_IsPrefabParent: 1
+--- !u!65 &65280172621233704
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.43881, y: 173.64417, z: 22.39456}
+  m_Center: {x: -0.0000016142262, y: -0.0000006605511, z: 11.0822115}

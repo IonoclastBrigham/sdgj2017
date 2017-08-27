@@ -43,10 +43,10 @@ public class ObstacleController : MonoBehaviour {
         _nextSpawnDistance -= Minigame.CharacterMoveSpeed * Time.fixedDeltaTime;
 	}
 
-    private GameObject SpawnObject( GameObject prefab )
+    private GameObject SpawnObject( GameObject prefab, int lane )
     {
         var instance = GameObject.Instantiate(prefab);
-        instance.transform.position = Lanes [Random.Range(0, Lanes.Length)].position;
+        instance.transform.position = Lanes [lane].position;
         _instances.Add(instance);
         return instance;
     }
@@ -57,9 +57,10 @@ public class ObstacleController : MonoBehaviour {
         {
             if (ShouldSpawnObject())
             {
-                SpawnObject(GetRandomObjPrefab());
+                int lane = GetRandomLane();
+                SpawnObject(GetRandomObjPrefab(lane), lane);
 
-                _nextSpawnDistance = Random.Range(3, 10);
+                _nextSpawnDistance = Random.Range(2, 6);
             }
 
             yield return new WaitForSeconds(0.1f);
@@ -74,8 +75,18 @@ public class ObstacleController : MonoBehaviour {
         return _nextSpawnDistance < 0;
     }
 
-    private GameObject GetRandomObjPrefab()
+    private GameObject GetRandomObjPrefab( int lane )
     {
-		return SpawnData.Obstacles [Random.Range(0, SpawnData.Obstacles.Length)];
+        if (lane == 0)
+            return SpawnData.Obstacles [Random.Range(0, SpawnData.Obstacles.Length)];
+        else if (lane == 1)
+            return SpawnData.Cover [Random.Range(0, SpawnData.Cover.Length)];
+        else
+            return SpawnData.Decorations [Random.Range(0, SpawnData.Decorations.Length)];
+    }
+
+    private int GetRandomLane()
+    {
+        return Random.Range(0, 3);
     }
 }

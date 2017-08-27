@@ -8,12 +8,14 @@ public class WireCutterMinigame : MonoBehaviour {
     public AudioSource Audio;
     public AudioClip Explosion_Nuke;
     public AudioClip Explosion_Dud;
+    public AudioClip SnipClip;
 
     public ParticleSystem MissileParticles;
 
     public Sprite Uncut;
     public Sprite Cut;
     public Image[] Wires;
+    public Image FadePanel;
 
     public RectTransform WireCutter;
 
@@ -73,6 +75,9 @@ public class WireCutterMinigame : MonoBehaviour {
 
         if (_globalState.FirstSelectedWireIndex < 0)
             _globalState.CorrectWire = _index == 0 ? 1 : 0;
+
+        if (Audio)
+            Audio.PlayOneShot(SnipClip);
     }
 
     public void SetPosition( int index )
@@ -85,12 +90,16 @@ public class WireCutterMinigame : MonoBehaviour {
     {
         if (Audio)
             Audio.PlayOneShot(Explosion_Nuke);
+        
+        StartCoroutine(FadeToColor(Color.white));
     }
 
     private void PlaySuccess()
     {
         if (Audio)
             Audio.PlayOneShot(Explosion_Dud);
+
+        StartCoroutine(FadeToColor(Color.black));
     }
 
     public void TriggerEnd()
@@ -104,12 +113,33 @@ public class WireCutterMinigame : MonoBehaviour {
         else
             PlayFailure();
 
-        StartCoroutine(WaitAndContinueToNextGame(2.0f));
+        StartCoroutine(WaitAndContinueToNextGame(3.0f));
     }
 
     IEnumerator WaitAndContinueToNextGame( float delay )
     {
         yield return new WaitForSeconds(delay);
-        _globalState.GoToNextMinigame();
+
+        if (_globalState)
+            _globalState.GoToNextMinigame();
     }
+
+    IEnumerator FadeToColor( Color c )
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        var startColor = c;
+        c.a = 0;
+        FadePanel.color = startColor;
+        float duration = 2.0f;
+        float t = duration;
+        while (t > 0)
+        {
+            FadePanel.color = Color.Lerp(startColor, c, Mathf.Clamp01(t / duration));
+            yield return new WaitForEndOfFrame();
+
+            t -= Time.deltaTime;
+        }
+    }
+
 }
