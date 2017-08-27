@@ -30,6 +30,21 @@ public class MasterSceneController : MonoBehaviour {
         SceneManager.LoadScene("Scenes/BombDiffusal");
     }
 
+    public void StartRunnerScenario()
+    {
+        SceneManager.LoadScene("Scenes/SniperRunner");
+    }
+
+    public void StartFightScenario()
+    {
+        SceneManager.LoadScene("Scenes/FightScene");
+    }
+
+    public void StartQTEScenario()
+    {
+        SceneManager.LoadScene("Scenes/QTEScene");
+    }
+
     public void StartCarScenario()
     {
         SceneManager.LoadScene("Scenes/CarMinigame");

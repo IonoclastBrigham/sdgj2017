@@ -9,6 +9,9 @@ public class GlobalState : MonoBehaviour {
 
     public bool CompletedWireMinigame = false;
     public bool CompletedCarMinigame = false;
+    public bool CompletedRunnerMinigame = false;
+    public bool CompletedFightMinigame = false;
+    public bool CompletedQTEMinigame = false;
 
 
     void Awake()
@@ -20,8 +23,14 @@ public class GlobalState : MonoBehaviour {
     {
         if (!CompletedWireMinigame)
             GetComponent<MasterSceneController>().StartWireScenario();
+        else if (!CompletedRunnerMinigame)
+            GetComponent<MasterSceneController>().StartRunnerScenario();
+        else if (!CompletedFightMinigame)
+            GetComponent<MasterSceneController>().StartFightScenario();
         else if (!CompletedCarMinigame)
             GetComponent<MasterSceneController>().StartCarScenario();
+        else if (!CompletedQTEMinigame)
+            GetComponent<MasterSceneController>().StartQTEScenario();
         else
             GetComponent<MasterSceneController>().StartEnding();
     }

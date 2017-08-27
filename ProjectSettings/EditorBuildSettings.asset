@@ -15,5 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/CarMinigame.unity
     guid: f2cfefa28ca20394784cd4c2a7f6a6c2
   - enabled: 1
+    path: Assets/Scenes/SniperRunner.unity
+    guid: aa3ccd026c98d3445969ee4dc7c5efc9
+  - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: fff4de4ebad6e1d46908f8eaba961863
+  - enabled: 1
+    path: Assets/Scenes/FightScene.unity
+    guid: 9558401231d1daf49bbde7587f95db4e
+  - enabled: 1
+    path: Assets/Scenes/QTEScene.unity
+    guid: 45bf9f9fd11edcb4f934c752eaacfaf6
+  - enabled: 1
+    path: Assets/Scenes/NuclearExplosion.unity
+    guid: 8d7993e5c10d78d46b385f5e97d9df96
+  - enabled: 1
+    path: Assets/Scenes/StandingOverDeadDude.unity
+    guid: ee2204243097dd04a83255135f8b297e

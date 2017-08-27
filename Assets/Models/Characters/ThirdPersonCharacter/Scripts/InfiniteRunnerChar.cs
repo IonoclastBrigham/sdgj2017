@@ -43,8 +43,12 @@ public class InfiniteRunnerChar : MonoBehaviour {
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+        bool crouch = false;
+        if (Input.GetKey(KeyCode.DownArrow))
+            crouch = true;
+
         // pass all parameters to the character control script
-        m_Character.Move( Vector3.right, false, m_Jump);
+        m_Character.Move( Vector3.right, crouch, m_Jump);
         m_Jump = false;
     }
 }
