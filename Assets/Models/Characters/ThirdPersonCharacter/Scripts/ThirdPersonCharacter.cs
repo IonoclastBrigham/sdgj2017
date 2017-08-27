@@ -121,6 +121,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
+            if (m_Crouching)
+            {
+                m_ForwardAmount = 0;
+                if (Minigame)
+                    Minigame.CharacterMoveSpeed = 0;
+            } else
+            {
+                if (Minigame)
+                    Minigame.CharacterMoveSpeed = 5;
+            }
+
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
