@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 509357211a527984894544a8b5be0163
+  - enabled: 1
+    path: Assets/Scenes/BombDiffusal.unity
+    guid: fa5d44bfd6ad4c6459b5f29a5dd09cb9
