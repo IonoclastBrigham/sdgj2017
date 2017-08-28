@@ -72,9 +72,6 @@ public class CarSpawner : MonoBehaviour {
         obj.transform.parent = null;
         obj.transform.position = SpawnPoints [spawnIndex].position;
 
-        var trigger = obj.AddComponent<BoxCollider>();
-        trigger.size = new Vector3(1, 1, 3);
-
         var car = obj.AddComponent<NpcCar>();
         car.Speed = Mathf.Lerp(MinSpeed, MaxSpeed, _runTime / Duration);
         obj.tag = "Car";
