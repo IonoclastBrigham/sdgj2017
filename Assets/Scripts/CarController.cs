@@ -15,6 +15,7 @@ public class CarController : MonoBehaviour {
     public AudioClip CarSmash;
 
     public GameObject ExplosionPrefab;
+    public CarMinigame Minigame;
 
     private int _laneIndex = 0;
     private float _smoothVelocity;
@@ -73,6 +74,7 @@ public class CarController : MonoBehaviour {
     public void SpawnExplosion( Transform other )
     {
         StartCoroutine(SpawnExplosions(other));
+        Minigame.Crash();
     }
 
     IEnumerator SpawnExplosions( Transform other )
