@@ -24,13 +24,6 @@ public class QTEMinigame : MonoBehaviour {
         _startScale = Button.localScale.x;
         Button.gameObject.SetActive(false);
 
-        var globalState = GameObject.FindObjectOfType<GlobalState>();
-        if (globalState)
-        {
-            globalState.CompletedQTEMinigame = true;
-            globalState.GoToNextMinigame();
-        }
-
         StartCoroutine(SetQTEWindow(Random.Range(0.2f, 2), 1));
 	}
 
