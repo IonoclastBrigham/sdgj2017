@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public enum SceneToLoad
+{
+    BombDiffusal,
+    CarMinigame,
+    FightScene,
+    SniperRunner,
+    QTEScene
+
+}
+
 public class MasterSceneController : MonoBehaviour {
 
 	// Use this for initialization
@@ -22,36 +33,88 @@ public class MasterSceneController : MonoBehaviour {
     {
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene(index);
+        StartWireScenario();
     }
 
     public void StartWireScenario()
     {
-        SceneManager.LoadScene("Scenes/BombDiffusal");
+        LoadIntro(SceneToLoad.BombDiffusal);
     }
 
     public void StartRunnerScenario()
     {
-        SceneManager.LoadScene("Scenes/SniperRunner");
+        LoadIntro(SceneToLoad.SniperRunner);
     }
 
     public void StartFightScenario()
     {
-        SceneManager.LoadScene("Scenes/FightScene");
+        LoadIntro(SceneToLoad.FightScene);
     }
 
     public void StartQTEScenario()
     {
-        SceneManager.LoadScene("Scenes/QTEScene");
+        LoadIntro(SceneToLoad.QTEScene);
     }
 
     public void StartCarScenario()
     {
-        SceneManager.LoadScene("Scenes/CarMinigame");
+        LoadIntro(SceneToLoad.CarMinigame);
     }
 
     public void StartEnding()
     {
         SceneManager.LoadScene("Scenes/Ending");
+    }
+
+    public void LoadIntro( SceneToLoad scene )
+    {
+        switch (scene)
+        {
+            case SceneToLoad.BombDiffusal:
+                SceneManager.LoadScene("Scenes/IntroToBriefcase");
+                return;
+
+            case SceneToLoad.CarMinigame:
+                SceneManager.LoadScene("Scenes/IntroToCar");
+                return;
+
+            case SceneToLoad.FightScene:
+                SceneManager.LoadScene("Scenes/IntroToFight");
+                return;
+
+            case SceneToLoad.QTEScene:
+                SceneManager.LoadScene("Scenes/IntroToQTE");
+                return;
+
+            case SceneToLoad.SniperRunner:
+                SceneManager.LoadScene("Scenes/IntroToRunner");
+                return;
+        }
+    }
+
+    public void LoadScene( SceneToLoad scene )
+    {
+        switch (scene)
+        {
+            case SceneToLoad.BombDiffusal:
+                SceneManager.LoadScene("Scenes/BombDiffusal");
+                return;
+
+            case SceneToLoad.CarMinigame:
+                SceneManager.LoadScene("Scenes/CarMinigame");
+                return;
+
+            case SceneToLoad.FightScene:
+                SceneManager.LoadScene("Scenes/FightScene");
+                return;
+
+            case SceneToLoad.QTEScene:
+                SceneManager.LoadScene("Scenes/QTEScene");
+                return;
+
+            case SceneToLoad.SniperRunner:
+                SceneManager.LoadScene("Scenes/SniperRunner");
+                return;
+        }
     }
 }

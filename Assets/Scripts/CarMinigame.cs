@@ -28,7 +28,7 @@ public class CarMinigame : MonoBehaviour {
         if (Time.time - _startTime >= MinigameDuration)
         {
             StartCoroutine(FadeToColor(Color.black, 0.0f));
-            EndMinigame();
+            StartCoroutine( EndMinigame(true));
             _isRunning = false;
         }
     }
@@ -39,15 +39,16 @@ public class CarMinigame : MonoBehaviour {
         {
             _isRunning = false;
             StartCoroutine(FadeToColor(Color.red, 0.0f));
-            EndMinigame();
+            StartCoroutine(EndMinigame(false));
         }
     }
 
-    void EndMinigame()
+    IEnumerator EndMinigame( bool success )
     {
+        yield return new WaitForSeconds(1.5f);
         if (_globalState)
         {
-            _globalState.CompletedCarMinigame = true;
+            _globalState.CompletedCarMinigame = success;
             _globalState.GoToNextMinigame();
         }
     }

@@ -23,13 +23,6 @@ public class FightMinigame : MonoBehaviour {
 
         StartCoroutine( FadeToColor(FadeInColor, 1.0f) );
 
-        var globalState = GameObject.FindObjectOfType<GlobalState>();
-        if (globalState)
-        {
-            globalState.CompletedFightMinigame = true;
-            globalState.GoToNextMinigame();
-        }
-
         StartCoroutine(SwitchToRagdoll(5.0f));
 
         StartCoroutine(EndScene());

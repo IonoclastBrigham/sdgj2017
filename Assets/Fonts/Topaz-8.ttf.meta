@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 78c8d0a08e2b53f43adaf342b57b5d0c
+timeCreated: 1503885838
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Topaz-8
+  fontNames:
+  - Topaz-8
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
