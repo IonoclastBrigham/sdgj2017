@@ -60,7 +60,7 @@ public class ObstacleController : MonoBehaviour {
                 int lane = GetRandomLane();
                 SpawnObject(GetRandomObjPrefab(lane), lane);
 
-                _nextSpawnDistance = Random.Range(2, 6);
+                _nextSpawnDistance = Random.Range(3.5f, 6);
             }
 
             yield return new WaitForSeconds(0.1f);
